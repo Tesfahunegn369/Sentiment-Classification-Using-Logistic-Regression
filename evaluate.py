@@ -10,8 +10,6 @@ def test_logistic_regression(test_x, test_y, freqs, theta):
         accuracy: (# of tweets classified correctly) / (total # of tweets)
     """
 
-    ### START CODE HERE (REPLACE INSTANCES OF 'None' with your code) ###
-
     # the list for storing predictions
     y_hat = []
 
@@ -30,8 +28,6 @@ def test_logistic_regression(test_x, test_y, freqs, theta):
     # convert both to one-dimensional arrays in order to compare them using the '==' operator
     accuracy = np.mean(y_hat == test_y)
 
-    ### END CODE HERE ###
-
     return accuracy
 
 def evalTest(test_x, test_y, freqs, theta):
@@ -40,7 +36,7 @@ def evalTest(test_x, test_y, freqs, theta):
     tmp_accuracy = test_logistic_regression(test_x, test_y, freqs, theta)
     print(f"Logistic regression model's accuracy = {tmp_accuracy:.4f}")
 
-    print("Q5: Implement evaluation (accuracy) (20 pts)")
+    print("Implement evaluation (accuracy)")
     if tmp_accuracy >= 0.97:
         print('SUCCESS')
     else:
