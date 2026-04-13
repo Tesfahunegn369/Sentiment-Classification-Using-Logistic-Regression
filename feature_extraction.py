@@ -41,7 +41,7 @@ def featureExtractionTest(train_x, freqs):
     tmp2 = extract_features('blorb bleeeeb bloooob', freqs)
     print(f"Feature of unseen words: {tmp2}\n")
 
-    print("Q3: Implement feature extraction (20 pts)")
+    print("Implement feature extraction")
     if np.array_equal(tmp1, [[1.00e+00, 3.02e+03, 6.10e+01]]):
         print('SUCCESS')
     else:
