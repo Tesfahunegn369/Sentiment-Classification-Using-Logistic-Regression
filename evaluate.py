@@ -1,6 +1,4 @@
 from predict import *
-
-# Q5: Implement predicting the sentiments of tweets and evaluating the accuracy (20 pts)
 def test_logistic_regression(test_x, test_y, freqs, theta):
     """
     Input:
