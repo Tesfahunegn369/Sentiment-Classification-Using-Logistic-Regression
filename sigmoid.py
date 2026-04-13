@@ -1,6 +1,4 @@
 import numpy as np
-
-# Q1: Implement sigmoid function (10 pts)
 def sigmoid(z):
     '''
     Input:
@@ -8,16 +6,13 @@ def sigmoid(z):
     Output:
         h: the sigmoid of z
     '''
-
-    ### START CODE HERE (REPLACE INSTANCES OF 'None' with your code) ###
     # calculate the sigmoid of z
     h = 1 / (1 + np.exp(-z))
-    ### END CODE HERE ###
 
     return h
 
 def sigmoidTest():
-    print("Q1: Implement sigmoid function (10 pts)")
+    print("Implement sigmoid function")
     result_0 = sigmoid(0)
     result_4_92 = sigmoid(4.92)
 
