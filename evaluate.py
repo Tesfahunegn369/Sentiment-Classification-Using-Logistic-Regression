@@ -1,0 +1,51 @@
+from predict import *
+
+# Q5: Implement predicting the sentiments of tweets and evaluating the accuracy (20 pts)
+def test_logistic_regression(test_x, test_y, freqs, theta):
+    """
+    Input:
+        test_x: a list of tweets
+        test_y: (m, 1) vector with the corresponding labels for the list of tweets
+        freqs: a dictionary with the frequency of each pair (or tuple)
+        theta: weight vector of dimension (3, 1)
+    Output:
+        accuracy: (# of tweets classified correctly) / (total # of tweets)
+    """
+
+    ### START CODE HERE (REPLACE INSTANCES OF 'None' with your code) ###
+
+    # the list for storing predictions
+    y_hat = []
+
+    for tweet in test_x:
+        # get the label prediction for the tweet
+        y_pred = predict_tweet(tweet, freqs, theta)
+
+        if y_pred > 0.5:
+            # append 1.0 to the list
+            y_hat.append(1.0)
+        else:
+            # append 0 to the list
+            y_hat.append(0)
+
+    # With the above implementation, y_hat is a list, but test_y is (m,1) array
+    # convert both to one-dimensional arrays in order to compare them using the '==' operator
+    accuracy = np.mean(y_hat == test_y)
+
+    ### END CODE HERE ###
+
+    return accuracy
+
+def evalTest(test_x, test_y, freqs, theta):
+    print("# Check the evaluation (accuracy)")
+
+    tmp_accuracy = test_logistic_regression(test_x, test_y, freqs, theta)
+    print(f"Logistic regression model's accuracy = {tmp_accuracy:.4f}")
+
+    print("Q5: Implement evaluation (accuracy) (20 pts)")
+    if tmp_accuracy >= 0.97:
+        print('SUCCESS')
+    else:
+        print('FAIL')
+        exit(1)
+    print('')
