@@ -17,10 +17,10 @@ print(f"length of freqs = {len(freqs.keys())}\n")
 print(f'# This is an example of a positive tweet: \n{train_x[0]}\n')
 print(f'# This is an example of the processed version of the tweet: \n{process_tweet(train_x[0])}\n')
 
-sigmoidTest()  # Q1
+sigmoidTest()  
 costFuncTest()
-gradientDescentTest()  # Q2
-featureExtractionTest(train_x, freqs)  # Q3
+gradientDescentTest()  
+featureExtractionTest(train_x, freqs)
 
 ## Sentiment classification using nltk tweeter sample dataset
 # collect the features 'x' and stack them into a matrix 'X'
