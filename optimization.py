@@ -1,6 +1,4 @@
 from sigmoid import *
-
-# Q2: Implement gradient descent (30 pts)
 def gradientDescent(x, y, theta, alpha, num_iters):
     '''
     Input:
@@ -14,7 +12,6 @@ def gradientDescent(x, y, theta, alpha, num_iters):
         theta: your final weight vector
     Hint: you might want to print the cost to make sure that it is going down.
     '''
-    ### START CODE HERE (REPLACE INSTANCES OF 'None' with your code) ###
     # get 'm', the number of rows in matrix x
     m = len(y)
 
@@ -35,8 +32,7 @@ def gradientDescent(x, y, theta, alpha, num_iters):
 
         # update the weights theta
         theta = theta - (alpha / m) * np.dot(x.T, (h - y))
-
-    ### END CODE HERE ###
+        
     J = float(J)
     return J, theta
 
@@ -64,7 +60,7 @@ def gradientDescentTest():
     print(f"The cost after training is {tmp_J:.8f}.")
     print(f"The resulting vector of weights is {[round(t, 8) for t in np.squeeze(tmp_theta)]}\n")
 
-    print("Q2: Implement gradient descent (30 pts)")
+    print("Implement gradient descent")
     if tmp_J < 0.675:
         print('SUCCESS')
     else:
